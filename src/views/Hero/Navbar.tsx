@@ -8,13 +8,13 @@ const navbarLinks = ['home', 'shop', 'about', 'contact'];
 
 const MobileMenu = ({ closeFunc }: { closeFunc: () => void }) => {
   return (
-    <div>
-      <div>
+    <div className='fixed inset-0 z-30 bg-black bg-opacity-10'>
+      <div className='bg-white container-gutters py-12 flex justify-between items-center'>
         <button onClick={closeFunc}>
           <img src={exitIcon} alt='click to close mobile navbar' />
         </button>
 
-        <ul>
+        <ul className='flex gap-8'>
           {navbarLinks.map((link) => (
             <li key={link}>{link}</li>
           ))}
@@ -31,7 +31,7 @@ export const Navbar = () => {
   const handleCloseMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className='container-gutters py-12'>
+    <nav className='container-gutters py-12 flex items-center'>
       <button onClick={handleOpenMenu}>
         <img
           src={hamburgerIcon}
