@@ -1,5 +1,7 @@
+import { Hero } from "./views";
+
 const App = () => {
-  return <div>Hello world!</div>;
+  return <Hero />;
 };
 
 export default App;
