@@ -1,7 +1,12 @@
-import { Hero } from "./views";
+import { Hero, About } from './views';
 
 const App = () => {
-  return <Hero />;
+  return (
+    <>
+      <Hero />
+      <About />
+    </>
+  );
 };
 
 export default App;
