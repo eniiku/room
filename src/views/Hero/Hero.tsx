@@ -41,6 +41,24 @@ export const Hero = () => {
           alt="the room's product catalogue"
           className='absolute inset-0 -z-30 h-[50vh]'
         />
+
+        <div className='absolute right-0 bottom-0'>
+          <button className='bg-black py-6 px-8' onClick={previousSlide}>
+            <img
+              src={leftChevronIcon}
+              alt='click to go back to the previous presentation'
+              width={12}
+            />
+          </button>
+
+          <button className='bg-black py-6 px-8' onClick={nextSlide}>
+            <img
+              src={rightChevronIcon}
+              alt='click to go to the next presentation'
+              width={12}
+            />
+          </button>
+        </div>
       </div>
 
       <div className='container-gutters py-12'>
