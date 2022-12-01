@@ -31,8 +31,11 @@ export const Navbar = () => {
   const handleCloseMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className='container-gutters py-12 flex items-center'>
-      <button onClick={handleOpenMenu}>
+    <header
+      className='container-gutters py-12 flex items-center md:items-center md:justify-start
+      md:gap-16 md:py-16 md:px-12'
+    >
+      <button onClick={handleOpenMenu} className='md:hidden'>
         <img
           src={hamburgerIcon}
           alt='click to access mobile navbar'
@@ -43,10 +46,17 @@ export const Navbar = () => {
       <img
         src={logoIcon}
         alt='Logo icon for the room(company)'
-        className='m-auto'
+        className='m-auto md:m-0'
       />
 
-      {isMenuOpen && <MobileMenu closeFunc={handleCloseMenu} />}
-    </nav>
+      {/* Navbar for Desktop Layout */}
+      <nav className='hidden md:flex gap-8 text-white text-sm font-semibold items-center'>
+        {navbarLinks.map((navLink) => (
+          <button key={navLink}>{navLink}</button>
+        ))}
+      </nav>
+
+      {isMenuOpen ? <MobileMenu closeFunc={handleCloseMenu} /> : null}
+    </header>
   );
 };

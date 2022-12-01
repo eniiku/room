@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { Navbar } from './Navbar';
 import { heroSlides } from '../../utils/data/heroSlides';
@@ -9,7 +9,6 @@ import rightChevronIcon from '../../assets/icon-angle-right.svg';
 export const Hero = () => {
   const [slides, setSlides] = useState(heroSlides[0]);
   const [index, setIndex] = useState(0);
-  console.log(index);
 
   const previousSlide = () => {
     if (index >= 1 && index < 3) {
